@@ -1,9 +1,4 @@
-#include <DCMotor.h>
-
-#define velocidad_full 90.0
-#define velocidad_media 60.0
-#define velocidad_baja 30.0
-#define velocidad_giro 60
+#include "Movimiento.h"
 
 DCMotor motor0(M0_EN, M0_D0, M0_D1);
 DCMotor motor1(M1_EN, M1_D0, M1_D1);
@@ -96,4 +91,58 @@ void reversa_media_izq()
 {
   motor0.setSpeed(-velocidad_media);
   motor1.setSpeed(-velocidad_baja);
+}
+
+void girar_360_der()
+{
+  int i=0;
+  while(i<=delay_360_1)
+   {
+
+     giro_der();
+     i++;
+     delay(1);
+   }
+   frenar();
+}
+
+//Hay que ajustar los delays, girar a la izquierda y a la dercha necesitan distinto delay
+void girar_360_izq()
+{
+  int i=0;
+  while(i<=delay_360_1)
+   {
+
+     giro_izq();
+     i++;
+     delay(1);
+   }
+   frenar();
+}
+
+void girar_180_der()
+{
+  int i=0;
+  while(i <= delay_180_1)
+   {
+
+     giro_der();
+     i++;
+     delay(1);
+   }
+   frenar();
+}
+
+//Hay que ajustar los delays, girar a la izquierda y a la dercha necesitan distinto delay
+void girar_180_izq()
+{
+  int i=0;
+  while(i <= delay_180_1)
+   {
+
+     giro_izq();
+     i++;
+     delay(1);
+   }
+   frenar();
 }
