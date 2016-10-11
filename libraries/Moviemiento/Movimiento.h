@@ -2,9 +2,9 @@
 #define Movimiento__h
 
 #define velocidad_full 100.0
-#define velocidad_media 70.0
-#define velocidad_baja 40.0
-#define velocidad_giro 80
+#define velocidad_media 60.0
+#define velocidad_baja 50.0
+#define velocidad_giro 55
 
 #define delay_360_1 1820 //El delay corresponde con la velocidad de giro 60.
 #define delay_180_1 1000 //TODO Hay que ajustar los delays, girar a la izquierda y a la dercha necesitan distinto delay
@@ -27,6 +27,8 @@ class Movimiento
 
     //frenar: Detener los motores
      void frenar();
+     void avanzar(int velocidad);
+     void reversa(int velocidad);
 
     //avanzar_full: Encender los motores a la velocidad_full
      void avanzar_full();
@@ -87,6 +89,18 @@ class Movimiento
     //TODO Hay que ajustar los delays, girar a la izquierda y a la dercha necesitan distinto delay
     //Hacer un giro_izq de 180 grados
      void girar_180_izq();
+    //
+    //
+     void giro_der_90gr();
+    //
+    //
+     void giro_izq_90gr();
+    //
+    //
+     void giro_der_trompo();
+    //
+    //
+     void giro_izq_trompo();
 };
 
 
